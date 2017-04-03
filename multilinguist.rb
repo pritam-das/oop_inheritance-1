@@ -53,3 +53,18 @@ class Multilinguist
   end
 end
 
+class MathGenius < Multilinguist
+    def report_total(number_array=[])
+      @total = number_array.sum
+      self.say_in_local_language("The total is #{@total}")
+    end
+end
+
+class QuoteCollector < Multilinguist
+  @@quote_collection = []
+  def quote_to_memorize(quote)
+      @temp = quote
+      @@quote_collection << @temp
+      self.say_in_local_language("#{@@quote_collection}\n")
+  end
+end
